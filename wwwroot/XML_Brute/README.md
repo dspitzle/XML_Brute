@@ -8,6 +8,8 @@ Table of contents:
 * [Using the Application](#using-the-application)
 * [Moving Forward](#moving-forward)
 
+NOTE: The primary version of this file is located in wwwroot\XML_Brute
+
 ## Introduction
 
 XML Brute is a PHP application that will accept an arbitrary XML file and generate a relational database as output.  At this stage 
