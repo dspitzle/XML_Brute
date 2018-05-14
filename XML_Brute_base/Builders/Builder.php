@@ -23,6 +23,22 @@ abstract class Builder{
 		rename ( $this->fileInfo->buildLocation , $this->fileInfo->finalLocation  );
 		return "<a href=\"".$this->fileInfo->finalLocation."\">Download ".$this->fileInfo->fileName."</a>";
 	}
+
+	
+	function cleanUp(){
+		unlink($this->fileInfo->uploadTarget);
+		$downloads = 'downloads';
+		$fileSystemIterator = new \FilesystemIterator('downloads');
+		$now = time();
+		foreach ($fileSystemIterator as $file) {
+			//echo "Checking ".$file->getFilename()."<br/>";
+			if (($now - $file->getCTime() >= 60 * 15) and ($file->getFilename() != 'stub.txt')){ // 15 minutes, and not the placeholder file
+				//echo "Removing ".$file->getFilename()."<br/>";			
+				unlink('downloads\\'.$file->getFilename());
+			}
+		}		
+	}
+	
 	
 	abstract function populate(\SimpleXMLElement $xml);
 	

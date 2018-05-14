@@ -14,8 +14,10 @@ class FileHelper{
 	public $fullUploadedName = "";
 	public $tmp_name = "";	
 	public $uploadedName = "";
+	public $uploadTarget = "";
 	public $targetFile = "";
 	public $exportName = "";
+	
 	public $ext = "";	
     public $fileName = "";
 	public $buildLocation = "";

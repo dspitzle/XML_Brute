@@ -2,7 +2,7 @@
 
 namespace XML_Brute\Builders;
 
-//import required database formats
+//import Builders for enabled database formats
 foreach($config['DbFormats'] as $key=>$value){
 	echo 'Requiring '.$key.'Builder.php<br/>';
 	require_once($base.'\\Builders\\'.$key.'Builder.php');

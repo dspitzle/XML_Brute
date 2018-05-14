@@ -35,6 +35,8 @@ else{
 	$builder = BuilderFactory::build( $_POST["export_format"],$tree);
 	$builder->build($tree);
 	$builder->populate($xml);
+	//PURGE OLD FILES FROM wwwroot downloads folder
+	$builder->cleanUp();
 	echo $builder->generateDownloadLink();
 	
 }

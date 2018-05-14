@@ -18,12 +18,12 @@ class Accdb32Builder extends Builder{
 	
 	public function build(){
 		echo "Creating Fresh ".$this->fileInfo->ext." File from Template...<br/>";
-		echo "Copying '".realpath("./")."\\Templates\\DatabaseTemplate".$this->fileInfo->ext."' to '".realpath( "./" ).'\\'.$this->fileInfo->buildLocation."'...<br/>";
+		echo "Copying '\\Templates\\DatabaseTemplate".$this->fileInfo->ext."' to '\\storage\\downloads\\".$this->fileInfo->fileName."'...<br/>";
 		flush();
 		copy ( $this->fileInfo->base."\\Templates\\DatabaseTemplate".$this->fileInfo->ext , $this->fileInfo->buildLocation  );
 		echo 'PDO Drivers Available: '.print_r(\PDO::getAvailableDrivers(),true).'<br/>';
 		$connectionString = "odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=".$this->fileInfo->buildLocation.";Uid=Admin";
-		echo "PDO Connecting to: ".$connectionString."<br/><br/>";			
+		echo "PDO Connecting to: '\\storage\\downloads\\".$this->fileInfo->fileName."'....<br/><br/>";
 		$this->connection = new \PDO($connectionString);
 		//Construct tables in target MS Access database
 		echo "Constructing Data Tables...<br/>";
