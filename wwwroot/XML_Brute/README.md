@@ -32,7 +32,7 @@ XML_Brute has been verified to run on Windows 7 serving 32-bit PHP version 5.6.3
    * `XML_Brute_base\storage\downloads` must have __read/execute__, __write__, and __modify__ permissions so that files can be moved into and out of it, accessed via PHP's PDO library, and deleted when no longer required.
    * `wwwroot\XML_Brute` must have __read__ and __write__ permissions so that files can be moved into it, and downloaded by the end user
 
-1. Settings in php.ini
+1. Settings in `php.ini`
 
    Working with larger XML files will probably require bumping up several environment values in `php.ini`, specifically 
    * `max_execution_time` (suggested value 300, which is 5 minutes)

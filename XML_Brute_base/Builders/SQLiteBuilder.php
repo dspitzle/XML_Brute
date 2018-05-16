@@ -19,7 +19,7 @@ class SQLiteBuilder extends Builder{
 	public function build(){
 		echo 'PDO Drivers Available: '.print_r(\PDO::getAvailableDrivers(),true).'<br/>';
 		$connectionString = "sqlite:".$this->fileInfo->buildLocation;
-		echo "PDO Connecting to: ".$connectionString."<br/><br/>";			
+		echo "PDO Connecting to: '\\storage\\downloads\\".$this->fileInfo->fileName."'<br/><br/>";			
 		$this->connection = new \PDO($connectionString);
 		//Construct tables in target SQLite database
 		echo "Constructing Data Tables...<br/>";
